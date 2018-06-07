@@ -4,7 +4,7 @@
 \alias{get_assay_data}
 \title{Get Assay Data}
 \usage{
-get_assay_data(file)
+get_assay_data(file, column_names)
 }
 \arguments{
 \item{file}{The output file from the Victor run}
