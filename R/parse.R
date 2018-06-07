@@ -7,9 +7,10 @@
 #'
 #' @return A dataframe of the assay results is returned
 #' @export
-get_assay_data <- function(file){
-  assay_data <- na.omit(readxl::read_excel(file, sheet = "Plate_Page1", col_names = FALSE, range = readxl::cell_rows(7:14)))
+get_assay_data <- function(file, column_names){
+  assay_data <- na.omit(readxl::read_excel(file, sheet = "Plate_Page1", col_names = column_names, range = readxl::cell_rows(7:14)))
   colnames(assay_data) <- NULL
+  assay_data <- as.matrix(assay_data)
   return(assay_data)
 }
 
@@ -49,4 +50,17 @@ add_metadata <-function(metadata, title, data){
   return(metadata)
 }
 
-
+#' @title Import Victor File
+#'
+#' @description Imports and manipulates the victor file
+#'
+#' @param filename The output file from the Victor run
+#'
+#' @return Returns a list of assay and metadata from a Victor file
+#' @export
+import_victor_file <- function(filename, experiment_columns){
+  data <- list()
+  data[["assay_data"]] <- get_assay_data(file = filename, column_names = experiment_columns)
+  data[["metadata"]] <- get_metadata(file = filename)
+  return(data)
+}
