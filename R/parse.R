@@ -7,10 +7,14 @@
 #'
 #' @return A dataframe of the assay results is returned
 #' @export
-get_assay_data <- function(file, column_names){
+get_assay_data <- function(file, column_names = FALSE) {
   assay_data <- na.omit(readxl::read_excel(file, sheet = "Plate_Page1", col_names = column_names, range = readxl::cell_rows(7:14)))
-  colnames(assay_data) <- NULL
-  assay_data <- as.matrix(assay_data)
+  if (column_names != FALSE) {
+    assay_data <- as.matrix(assay_data)
+  } else {
+    assay_data <- as.matrix(assay_data)
+    colnames(assay_data) <- NULL
+  }
   return(assay_data)
 }
 
@@ -22,7 +26,7 @@ get_assay_data <- function(file, column_names){
 #'
 #' @return A list of metadata is returned
 #' @export
-get_metadata <- function(file){
+get_metadata <- function(file) {
   metadata <- list()
   metadata_df <- na.omit(readxl::read_excel(file, sheet = "Protocol", col_names = FALSE, range = readxl::cell_rows(4:45)))
   metadata[["protocol_name"]] <- strsplit(as.character(metadata_df[1, ]), " +")[[1]][4]
@@ -45,7 +49,7 @@ get_metadata <- function(file){
 #'
 #' @return An updated list of metadata is returned
 #' @export
-add_metadata <-function(metadata, title, data){
+add_metadata <- function(metadata, title, data) {
   metadata[[title]] <- data
   return(metadata)
 }
@@ -58,9 +62,23 @@ add_metadata <-function(metadata, title, data){
 #'
 #' @return Returns a list of assay and metadata from a Victor file
 #' @export
-import_victor_file <- function(filename, experiment_columns){
+import_victor_file <- function(filename, experiment_columns) {
   data <- list()
   data[["assay_data"]] <- get_assay_data(file = filename, column_names = experiment_columns)
   data[["metadata"]] <- get_metadata(file = filename)
   return(data)
 }
+
+#' @title Select Rows
+#'
+#' @description Selects rows from assay data to analyze
+#'
+#' @param data The assay data object.
+#' @param rows The rows to select.
+#'
+#' @return Returns a data object with rows selected.
+#' @export
+select_rows <- function(data, rows) {
+  dplyr::slice(as.data.frame(data), rows)
+}
+
