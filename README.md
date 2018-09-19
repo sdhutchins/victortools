@@ -1,5 +1,4 @@
 [![Travis build status](https://travis-ci.org/sdhutchins/victortools.svg?branch=master)](https://travis-ci.org/sdhutchins/victortools)
-[![GitHub license](https://img.shields.io/github/license/sdhutchins/victortools.svg)](https://github.com/sdhutchins/victortools/blob/master/LICENSE)
 
 # victortools
 
