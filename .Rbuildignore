@@ -1,2 +1,6 @@
+^docs$
+^_pkgdown\.yml$
+^\.travis\.yml$
+^LICENSE\.md$
 ^.*\.Rproj$
 ^\.Rproj\.user$
