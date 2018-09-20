@@ -4,7 +4,7 @@
 \alias{import_victor_file}
 \title{Import Victor File}
 \usage{
-import_victor_file(filename, experiment_columns)
+import_victor_file(filename)
 }
 \arguments{
 \item{filename}{The output file from the Victor run}
