@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Import Victor File — import_victor_file • victortools</title>
+<title>Select Data — select_data • victortools</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Import Victor File — import_victor_file" />
+<meta property="og:title" content="Select Data — select_data" />
 
-<meta property="og:description" content="Imports and manipulates the victor file" />
+<meta property="og:description" content="Selects columns and rows from assay data to analyze" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,31 +97,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Import Victor File</h1>
+    <h1>Select Data</h1>
     <small class="dont-index">Source: <a href='https://github.com/sdhutchins/victortools/blob/master/R/parse.R'><code>R/parse.R</code></a></small>
-    <div class="hidden name"><code>import_victor_file.Rd</code></div>
+    <div class="hidden name"><code>select_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Imports and manipulates the victor file</p>
+    <p>Selects columns and rows from assay data to analyze</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>import_victor_file</span>(<span class='no'>filename</span>)</pre>
+    <pre class="usage"><span class='fu'>select_data</span>(<span class='no'>data</span>, <span class='no'>columns</span>, <span class='no'>rows</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>filename</th>
-      <td><p>The output file from the Victor run</p></td>
+      <th>data</th>
+      <td><p>The assay data object.</p></td>
+    </tr>
+    <tr>
+      <th>rows</th>
+      <td><p>The rows to select.</p></td>
+    </tr>
+    <tr>
+      <th>colums</th>
+      <td><p>The rows to select.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a list of assay and metadata from a Victor file</p>
+    <p>Returns a subsetted data object.</p>
     
 
   </div>
