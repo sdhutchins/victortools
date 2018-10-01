@@ -6,6 +6,8 @@
 #' @param file The output file from the Victor run
 #'
 #' @return A dataframe of the assay results is returned
+#'
+#' @importFrom readxl read_excel
 #' @export
 get_assay_data <- function(file) {
   assay_data <- readxl::read_excel(file, sheet = "Plate_Page1", col_names = FALSE, range = readxl::cell_rows(7:14))

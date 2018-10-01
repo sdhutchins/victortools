@@ -9,9 +9,9 @@ select_data(data, columns, rows)
 \arguments{
 \item{data}{The assay data object.}
 
-\item{rows}{The rows to select.}
+\item{columns}{The rows to select.}
 
-\item{colums}{The rows to select.}
+\item{rows}{The rows to select.}
 }
 \value{
 Returns a subsetted data object.
