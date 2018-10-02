@@ -1,3 +1,23 @@
 template:
   params:
     bootswatch: simplex
+
+reference:
+- title: Data Manipulation
+  contents:
+  - add_metadata
+  - get_assay_data
+  - get_metadata
+  - import_victor_file
+  - select_data
+
+- title: Expression Columns
+  contents:
+  - ap1_cols
+  - cre_cols
+  - nfkb_cols
+  - sre_cols
+
+- title: Data Visualization
+  contents:
+  - expression_barplot
