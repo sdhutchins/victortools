@@ -1,11 +1,11 @@
 Package: victortools
-Title: Mainipulate the Output File from the Victor.
+Title: Mainipulate the Output File from the Victor
 Version: 0.1
 Authors@R: person("Shaurita", "Hutchins", email = "sdhutchins@outlook.com", role = c("aut", "cre"))
 URL: https://github.com/sdhutchins/victortools
 BugReports: https://github.com/sdhutchins/victortools/issues
 Description: This package will parse the output from the Victor, clean data, summarize data, and perform some basic stats functions that may be relevant for data analysis.
-Depends: R (>= 3.4.3)
+Depends: R (>= 3.4.0)
 Imports:
     tidyverse,
     ggthemes,
