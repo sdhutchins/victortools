@@ -25,6 +25,8 @@ get_assay_data <- function(file) {
 #' @param file The output file from the Victor run
 #'
 #' @return A list of metadata is returned
+#' @importFrom stats na.omit
+#' @importFrom readxl read_excel
 #' @export
 get_metadata <- function(file) {
   metadata <- list()
@@ -84,4 +86,3 @@ select_data <- function(data, columns, rows) {
   colnames(data) <- NULL
   rownames(data) <- NULL
 }
-

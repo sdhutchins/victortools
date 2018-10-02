@@ -7,7 +7,7 @@ An R package to mainipulate the output file from the Victor.
 ## Installation
 
 ```r
-devtools::install_github("sdhutchins/documenteR")
+devtools::install_github("sdhutchins/victortools")
 ```
 
 ## Examples
