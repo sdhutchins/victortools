@@ -1,4 +1,3 @@
-
 #' @title Get Assay Data
 #'
 #' @description Retrieves and cleans assay results from Victor ouput file
