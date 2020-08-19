@@ -31,12 +31,12 @@ get_metadata <- function(file) {
   metadata <- list()
   metadata_df <- na.omit(readxl::read_excel(file, sheet = "Protocol", col_names = FALSE, range = readxl::cell_rows(4:45)))
   metadata[["protocol_name"]] <- strsplit(as.character(metadata_df[1, ]), " +")[[1]][4]
-  plate_map <- metadata_df[21:29, ]
+  plate_map <- metadata_df[21:28, ]
   colnames(plate_map) <- NULL
   metadata[["plate_map"]] <- plate_map
-  metadata[["assay_id"]] <- strsplit(as.character(metadata_df[35, ]), " +")[[1]][4]
-  date_str <- strsplit(as.character(metadata_df[36, ]), " +")[[1]][4:6]
-  metadata[["date_measured"]] <- paste0(date_str[1], sep = " ", "at ", date_str[2], sep = " ", date_str[3])
+  metadata[["assay_id"]] <- strsplit(as.character(metadata_df[34, ]), " +")[[1]][4]
+  date_str <- strsplit(as.character(metadata_df[32, ]), " +")[[1]][4:6]
+  metadata[["date_measured"]] <- paste0(date_str[2])
   return(metadata)
 }
 
